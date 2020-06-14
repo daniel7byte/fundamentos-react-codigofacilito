@@ -4,7 +4,12 @@ import Hello from './Hello';
 import './style.css';
 
 function MiComponentePresentacion(props){
-  return <p>Hola soy {props.nombre} y tengo {props.edad} años de edad</p>;
+  console.log(props.children);
+  return <div Style="border: 1px solid red">
+    <p>Hola soy {props.nombre} y tengo {props.edad} años de edad</p>
+    <h4>{3+5*props.edad}</h4>
+    {props.children}
+  </div>;
 }
 
 class MiComponenteDeClase extends Component {
@@ -29,7 +34,9 @@ class App extends Component {
         <p>
           Start editing to see some magic happen :)
         </p>
-        <MiComponentePresentacion nombre="Jose Daniel" edad={18}/>
+        <MiComponentePresentacion nombre="Jose Daniel" edad={18}>
+          <h1>Soy Un HIJO GRANDE!</h1>
+        </MiComponentePresentacion>
         <MiComponenteDeClase/>
       </div>
     );
