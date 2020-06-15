@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import MiFormulario from './MiFormulario';
@@ -7,9 +7,19 @@ import Blog from './Blog';
 import ClientRest from './ClientRest';
 import './style.css';
 
+function NewContador(props){
+  // this.state = { contador: 0 }
+  const [contador, setContador] = useState(0);
+  return (
+    <div>
+      <p>Conteo: {contador}</p>
+      <button onClick={ () => setContador(contador + 1)}>+1</button>
+    </div>
+  )
+}
 
 function MiComponentePresentacion(props){
-  console.log(props.children);
+  //console.log(props.children);
   return <div>
     <p>Hola soy {props.nombre} y tengo {props.edad} años de edad</p>
     <h4>{3+5*props.edad}</h4>
@@ -36,9 +46,7 @@ class App extends Component {
     return (
       <div>
         <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+        <NewContador/>
         <MiComponentePresentacion nombre="Jose Daniel" edad={18}>
           <h1>SOY UN HIJO GRANDE!</h1>
         </MiComponentePresentacion>
