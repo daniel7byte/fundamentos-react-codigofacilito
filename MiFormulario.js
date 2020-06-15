@@ -9,11 +9,21 @@ class MiFormulario extends Component {
     }
   }
 
+  syncChanges = (value, property) => {
+    let state = {};
+    state[property] = value;
+    this.setState(state);
+  }
+
+  submitForm = () => {
+    console.log(this.state);
+  }
+
   render(){
     return <form>
-      <input type="text" OnClick={} value={this.state.email} placeholder="Email"/>
-      <input type="text" OnClick={} value={this.state.password} placeholder="*******"/>
-      <input type="submit" value="Iniciar" />
+      <input type="text" onChange={(ev)=>{this.syncChanges(ev.target.value, 'email')}} value={this.state.email} placeholder="Email"/>
+      <input type="text" onChange={(ev)=>{this.syncChanges(ev.target.value, 'password')}} value={this.state.password} placeholder="*******"/>
+      <input onClick={this.submitForm} type="submit" value="Iniciar" />
     </form>;
   }
 }
