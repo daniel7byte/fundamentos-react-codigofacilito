@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import MiFormulario from './MiFormulario';
 import Contador from './Contador';
+import Blog from './Blog';
 import './style.css';
 
 
@@ -44,6 +45,8 @@ class App extends Component {
         <hr/>
         <MiFormulario/>
         <Contador/>
+        <hr/>
+        <Blog/>  
       </div>
     );
   }
