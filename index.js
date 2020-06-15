@@ -10,7 +10,7 @@ import './style.css';
 
 function MiComponentePresentacion(props){
   console.log(props.children);
-  return <div Style="border: 1px solid green">
+  return <div>
     <p>Hola soy {props.nombre} y tengo {props.edad} años de edad</p>
     <h4>{3+5*props.edad}</h4>
     {props.children}
