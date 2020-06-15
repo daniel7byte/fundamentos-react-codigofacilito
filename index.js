@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
+import MiFormulario from './MiFormulario';
+import Contador from './Contador';
 import './style.css';
+
 
 function MiComponentePresentacion(props){
   console.log(props.children);
-  return <div Style="border: 1px solid red">
+  return <div Style="border: 1px solid green">
     <p>Hola soy {props.nombre} y tengo {props.edad} años de edad</p>
     <h4>{3+5*props.edad}</h4>
     {props.children}
@@ -35,9 +38,12 @@ class App extends Component {
           Start editing to see some magic happen :)
         </p>
         <MiComponentePresentacion nombre="Jose Daniel" edad={18}>
-          <h1>Soy Un HIJO GRANDE!</h1>
+          <h1>SOY UN HIJO GRANDE!</h1>
         </MiComponentePresentacion>
         <MiComponenteDeClase/>
+        <hr/>
+        <MiFormulario/>
+        <Contador/>
       </div>
     );
   }
