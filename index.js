@@ -4,6 +4,7 @@ import Hello from './Hello';
 import MiFormulario from './MiFormulario';
 import Contador from './Contador';
 import Blog from './Blog';
+import ClientRest from './ClientRest';
 import './style.css';
 
 
@@ -46,7 +47,9 @@ class App extends Component {
         <MiFormulario/>
         <Contador/>
         <hr/>
-        <Blog/>  
+        <Blog/>
+        <hr/>
+        <ClientRest/>
       </div>
     );
   }
